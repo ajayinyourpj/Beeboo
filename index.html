@@ -10,10 +10,18 @@
       background: #f8f9fa;
       color: #333;
       padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.night {
+      background: #121212;
+      color: #f1f1f1;
     }
     .beeboo {
       font-size: 48px;
       margin: 20px;
+    }
+    img {
+      margin: 10px;
     }
     button {
       margin: 10px;
@@ -27,16 +35,21 @@
     button:hover {
       background: #ffcc33;
     }
+    body.night button {
+      background: #333;
+      color: #fff;
+    }
     .message {
       margin-top: 20px;
       font-size: 20px;
       font-weight: bold;
-      min-height: 40px; /* reserve space so it doesn’t jump */
+      min-height: 40px;
     }
   </style>
 </head>
 <body>
   <div class="beeboo"><(•_•)></div>
+  <img id="beebooImg" src="https://via.placeholder.com/120?text=Beeboo" alt="Beeboo" width="120">
   <h1>Hi, I’m Beeboo!</h1>
   <p>Tap a button to tell me how you feel.</p>
 
@@ -44,9 +57,12 @@
   <button onclick="support('sad')">I feel sad</button>
   <button onclick="support('tired')">I feel tired</button>
   <button onclick="support('happy')">I feel happy</button>
+  <button onclick="toggleNightMode()">🌙 Toggle Night Mode</button>
 
   <div class="message" id="messageBox"></div>
 
   <script>
-    function support(feeling) {
-      const responses = {
+    // Possible responses for each feeling
+    const responses = {
+      anxious: [
+        "Take a deep breath. You’re
