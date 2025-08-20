@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beeboo <(•_•)></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f8f9fa;
+      color: #333;
+      padding: 20px;
+    }
+    .beeboo {
+      font-size: 48px;
+      margin: 20px;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background: #ffd966;
+      cursor: pointer;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="beeboo"><(•_•)></div>
+  <h1>Hi, I’m Beeboo!</h1>
+  <p>Tap a button to tell me how you feel.</p>
+
+  <button onclick="support('anxious')">I feel anxious</button>
+  <button onclick="support('sad')">I feel sad</button>
+  <button onclick="support('tired')">I feel tired</button>
+  <button onclick="support('happy')">I feel happy</button>
+
+  <div class="message" id="messageBox"></div>
+
+  <script>
+    function support(feeling) {
+      let responses = {
+        anxious: "Take a deep breath. You’re safe, and I’m here with you. <(•‿•)>",
+        sad: "It’s okay to feel sad. You’re loved more than you know. <(╥_╥)>",
+        tired: "You’ve done so well today. Rest is important. <(－‿－)>",
+        happy: "Yay! I’m happy with you! <(•ᴗ•)>"
+      };
+      document.getElementById("messageBox").innerText = responses[feeling];
+    }
+  </script>
+</body>
+</html>
