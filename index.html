@@ -24,10 +24,14 @@
       background: #ffd966;
       cursor: pointer;
     }
+    button:hover {
+      background: #ffcc33;
+    }
     .message {
       margin-top: 20px;
       font-size: 20px;
       font-weight: bold;
+      min-height: 40px; /* reserve space so it doesn’t jump */
     }
   </style>
 </head>
@@ -45,14 +49,4 @@
 
   <script>
     function support(feeling) {
-      let responses = {
-        anxious: "Take a deep breath. You’re safe, and I’m here with you. <(•‿•)>",
-        sad: "It’s okay to feel sad. You’re loved more than you know. <(╥_╥)>",
-        tired: "You’ve done so well today. Rest is important. <(－‿－)>",
-        happy: "Yay! I’m happy with you! <(•ᴗ•)>"
-      };
-      document.getElementById("messageBox").innerText = responses[feeling];
-    }
-  </script>
-</body>
-</html>
+      const responses = {
